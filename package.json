@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Advanced Werewolf Role Picker for large-scale games (20-40 players) with Fisher-Yates shuffle algorithm",
   "type": "module",
+  "homepage": "https://noeralma.github.io/werewolf-role-picker",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "werewolf",
@@ -29,6 +32,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.0"
