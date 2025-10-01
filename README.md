@@ -2,6 +2,10 @@
 
 An advanced React-based role assignment system for large-scale Werewolf/Mafia games, optimized for 20-40 players with cryptographically secure randomization.
 
+## 🌐 Live Demo
+
+**🚀 [Try it now!](https://noeralma.github.io/werewolf-role-picker/)**
+
 ## ✨ Features
 
 - **🎲 Fisher-Yates Shuffle Algorithm**: Cryptographically secure role randomization
@@ -11,7 +15,10 @@ An advanced React-based role assignment system for large-scale Werewolf/Mafia ga
 - **📚 Built-in Game Rules**: Complete guide and strategy tips
 - **🔄 Multiple Assignments**: Generate multiple role sets for comparison
 - **📊 Export Options**: Copy or export role assignments
-- **🌙 Dark Theme**: Atmospheric werewolf-themed UI
+- **🌙 Dark/Light Theme**: Toggle between themes with system preference detection
+- **⌨️ Keyboard Shortcuts**: Quick navigation and actions (1,2,3 for tabs, G/R for generate/regenerate)
+- **🔄 Loading States**: Visual feedback during role generation
+- **♿ Accessibility**: Enhanced keyboard navigation and screen reader support
 
 ## 🚀 Quick Start
 
@@ -39,6 +46,12 @@ An advanced React-based role assignment system for large-scale Werewolf/Mafia ga
 
 ```bash
 npm run build
+```
+
+### Deploy to GitHub Pages
+
+```bash
+npm run deploy
 ```
 
 The built files will be in the `dist` directory, ready for deployment.
