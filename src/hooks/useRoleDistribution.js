@@ -45,9 +45,17 @@ export const useRoleDistribution = (playerCount, customDistribution, onDistribut
   }, [customDistribution]);
 
   const handleRoleCountChange = (roleId, newCount) => {
+    // Handle empty input for better mobile experience
+    let count;
+    if (newCount === '' || newCount === null || newCount === undefined) {
+      count = 0;
+    } else {
+      count = Math.max(0, parseInt(newCount) || 0);
+    }
+    
     const updatedDistribution = {
       ...currentDistribution,
-      [roleId]: Math.max(0, newCount)
+      [roleId]: count
     };
     setInternalCustomDistribution(updatedDistribution);
     if (onDistributionChange) {

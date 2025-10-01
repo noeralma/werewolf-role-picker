@@ -109,7 +109,7 @@ const RoleDistribution = React.memo(({ playerCount, onDistributionChange, custom
                   min="0"
                   max="10"
                   value={role.count}
-                  onChange={(e) => handleRoleCountChange(role.id, parseInt(e.target.value) || 0)}
+                  onChange={(e) => handleRoleCountChange(role.id, e.target.value)}
                   className="w-16 bg-moon-800 border border-moon-600 rounded px-2 py-1 text-center text-moon-100"
                 />
               </div>
@@ -138,7 +138,7 @@ const RoleDistribution = React.memo(({ playerCount, onDistributionChange, custom
                   min="0"
                   max="20"
                   value={role.count}
-                  onChange={(e) => handleRoleCountChange(role.id, parseInt(e.target.value) || 0)}
+                  onChange={(e) => handleRoleCountChange(role.id, e.target.value)}
                   className="w-16 bg-moon-800 border border-moon-600 rounded px-2 py-1 text-center text-moon-100"
                 />
               </div>

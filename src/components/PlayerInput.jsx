@@ -9,8 +9,9 @@ const PlayerInput = React.memo(({ onPlayersChange, playerCount, players }) => {
 
   useEffect(() => {
     if (inputMethod === INPUT_METHODS.COUNT) {
-      // Generate generic player names
-      const names = Array.from({ length: count }, (_, i) => `Player ${i + 1}`);
+      // Generate generic player names, handle empty count
+      const playerCount = count === '' ? 1 : count;
+      const names = Array.from({ length: playerCount }, (_, i) => `Player ${i + 1}`);
       onPlayersChange(names);
     } else {
       // Parse player names from textarea
@@ -23,8 +24,19 @@ const PlayerInput = React.memo(({ onPlayersChange, playerCount, players }) => {
   }, [inputMethod, count, playerNames, onPlayersChange]);
 
   const handleCountChange = (e) => {
-    const newCount = Math.max(1, parseInt(e.target.value) || 1);
-    setCount(newCount);
+    const value = e.target.value;
+    
+    // Allow empty input for better mobile experience
+    if (value === '') {
+      setCount('');
+      return;
+    }
+    
+    const numValue = parseInt(value);
+    if (!isNaN(numValue)) {
+      const newCount = Math.max(1, numValue);
+      setCount(newCount);
+    }
   };
 
   const handleNamesChange = (e) => {
